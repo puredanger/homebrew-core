@@ -1,13 +1,13 @@
 class Clojure < Formula
   desc "The Clojure Programming Language"
   homepage "https://clojure.org"
-  url "https://download.clojure.org/install/brew/clojure-scripts-1.8.0.129.tar.gz"
-  sha256 "8010fce3a9f7be929e82d3175dc6222a9080743e637af31ff7bf4179df5c797b"
+  url "https://download.clojure.org/install/brew/clojure-scripts-1.8.0.132.tar.gz"
+  sha256 "9e544c830977aa796c750737f2fcee5e8f4be08c081493b9851c4bbb07c7e570"
 
   devel do
-    url "https://download.clojure.org/install/brew/clojure-scripts-1.9.0-alpha19.155.tar.gz"
-    sha256 "7c0a65755fb9e8341c6d5814525e09264ed4e460d63eae8096138be4fd6037c3"
-    version "1.9.0-alpha19.155"
+    url "https://download.clojure.org/install/brew/clojure-scripts-1.9.0-alpha19.166.tar.gz"
+    sha256 "73c5b7051c0c446da38e9fdbbb6626435362f9a7df49cb2e3bc7d8bef070463b"
+    version "1.9.0-alpha19.166"
   end
 
   bottle :unneeded
@@ -16,11 +16,7 @@ class Clojure < Formula
   depends_on "rlwrap"
 
   def install
-    prefix.install Dir["*.jar"]
-    prefix.install "deps.edn"
-    inreplace "clojure", /PREFIX/, prefix
-    bin.install "clojure"
-    bin.install "clj"
+    system("./install.sh #{prefix}")
   end
 
   def caveats; <<-EOS.undent
