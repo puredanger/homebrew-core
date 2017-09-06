@@ -5,9 +5,9 @@ class Clojure < Formula
   sha256 "8010fce3a9f7be929e82d3175dc6222a9080743e637af31ff7bf4179df5c797b"
 
   devel do
-    url "https://download.clojure.org/install/brew/clojure-scripts-1.9.0-alpha19.152.tar.gz"
-    sha256 "8e6c8e41896f190c8e2e361c251304ddb21a6a4bd2fc6e9aae44013e8776ec69"
-    version "1.9.0-alpha19.152"
+    url "https://download.clojure.org/install/brew/clojure-scripts-1.9.0-alpha19.155.tar.gz"
+    sha256 "7c0a65755fb9e8341c6d5814525e09264ed4e460d63eae8096138be4fd6037c3"
+    version "1.9.0-alpha19.155"
   end
 
   bottle :unneeded
@@ -30,7 +30,6 @@ class Clojure < Formula
   end
 
   test do
-    ENV.java_cache
     system("#{bin}/clj -e nil")
     %w[clojure clj].each do |clj|
       assert_equal "2", shell_output("#{bin}/#{clj} -e \"(+ 1 1)\"").strip
