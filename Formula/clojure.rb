@@ -5,9 +5,9 @@ class Clojure < Formula
   sha256 "9e544c830977aa796c750737f2fcee5e8f4be08c081493b9851c4bbb07c7e570"
 
   devel do
-    url "https://download.clojure.org/install/brew/clojure-scripts-1.9.0-alpha19.166.tar.gz"
-    sha256 "73c5b7051c0c446da38e9fdbbb6626435362f9a7df49cb2e3bc7d8bef070463b"
-    version "1.9.0-alpha19.166"
+    url "https://download.clojure.org/install/brew/clojure-scripts-1.9.0-alpha19.168.tar.gz"
+    sha256 "adb70378667f35def75731e7a9e4434f973aee117b5a34ea017436cde91bf898"
+    version "1.9.0-alpha19.168"
   end
 
   bottle :unneeded
@@ -16,7 +16,7 @@ class Clojure < Formula
   depends_on "rlwrap"
 
   def install
-    system("./install.sh #{prefix}")
+    system "./install.sh", "#{prefix}"
   end
 
   def caveats; <<-EOS.undent
